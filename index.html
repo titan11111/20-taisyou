@@ -3,52 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レトロシューティングゲーム</title>
+    <title>対称ゲーム - 美しい対称を描こう</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container" id="gameContainer">
-        <!-- タイトル画面 -->
-        <div id="titleScreen" class="screen">
-            <div class="title-content">
-                <h1>レトロシューティング</h1>
-                <p>宇宙の脅威から地球を守れ！<br>特殊アイテムで強力な攻撃を繰り出そう</p>
-                <div class="character">🚀</div>
-                <button id="startBtn" class="btn">ゲームスタート</button>
-                <div class="instructions">
-                    <p>←→で移動、スペースで射撃！<br>アイテムを取って特殊攻撃を解放！</p>
-                </div>
-            </div>
+    <div class="game-container">
+        <h1>対称ゲーム</h1>
+        <p class="instruction">画面をタッチして美しい対称模様を描こう！</p>
+        
+        <div class="controls">
+            <button id="clearBtn">クリア</button>
+            <button id="colorBtn">色を変える</button>
+            <button id="modeBtn">対称モード: 2方向</button>
+            <button id="sizeBtn">筆のサイズ: 中</button>
         </div>
-
-        <!-- ゲーム画面 -->
-        <div id="gameScreen" class="screen hidden">
-            <div class="game-header">
-                <div class="score" id="score">スコア: 0</div>
-                <div class="lives" id="lives">ライフ: 3</div>
-                <div class="level" id="level">レベル: 1</div>
-                <div class="boss-hp" id="bossHp" style="display: none;">ボスHP: 100</div>
-            </div>
-
-            <!-- ゲーム描画用のキャンバス -->
+        
+        <div class="canvas-container">
             <canvas id="gameCanvas"></canvas>
-
-            <div class="game-controls">
-                <button id="leftBtn" class="control-btn">←</button>
-                <button id="fireBtn" class="control-btn fire-btn">🔥</button>
-                <button id="rightBtn" class="control-btn">→</button>
-            </div>
         </div>
-
-        <!-- ゲームオーバー画面 -->
-        <div id="gameOverScreen" class="screen hidden">
-            <div class="game-over-content">
-                <h2>ゲームオーバー</h2>
-                <p id="finalScore">最終スコア: 0</p>
-                <p id="finalLevel">到達レベル: 1</p>
-                <div class="result-message" id="result-message"></div>
-                <button id="restartBtn" class="btn">もう一度遊ぶ</button>
-            </div>
+        
+        <div class="info">
+            <p>現在の色: <span id="currentColor">🔴</span></p>
+            <p>対称数: <span id="symmetryCount">2</span></p>
         </div>
     </div>
 
